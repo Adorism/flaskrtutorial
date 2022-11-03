@@ -15,8 +15,6 @@ Flask = "^2.2.2"
 SQLAlchemy = "^1.4.42"
 flask-sqlalchemy = "^3.0.2"
 
-[tool.poetry.group.dev.dependencies]
-poetry = "^1.2.2"
 
 [build-system]
 requires = ["poetry-core"]
