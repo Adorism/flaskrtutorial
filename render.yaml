@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: flasktut
+    autoDeploy: true # optional
+    env: python
+    repo: https://github.com/Adorism/flaskexperiment
+    buildCommand: poetry install
+    startCommand: poetry run flask run
+    initialDeployHook: poetry run flask init-db
+    envVars:
+      - key: FLASK_APP
+        value: flaskr
+      - key: FLASK_ENV
+        value: development
+      - key: PYTHON_VERSION
+        value: 3.8.1

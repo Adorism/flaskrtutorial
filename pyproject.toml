@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "flasktut"
+version = "0.1.0"
+description = "An example repo for guidance on deploying Flask apps to Render"
+authors = ["Audrey Maldonado"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+my-script = "flask run"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Flask = "^2.2.2"
+SQLAlchemy = "^1.4.42"
+flask-sqlalchemy = "^3.0.2"
+
+[tool.poetry.group.dev.dependencies]
+poetry = "^1.2.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
