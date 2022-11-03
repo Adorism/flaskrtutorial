@@ -11,6 +11,6 @@ services:
       - key: FLASK_APP
         value: flaskr
       - key: FLASK_DEBUG
-        value: true
+        value: false
       - key: PYTHON_VERSION
         value: 3.8.1
