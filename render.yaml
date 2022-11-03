@@ -3,7 +3,7 @@ services:
     name: flasktut
     autoDeploy: true # optional
     env: python
-    repo: https://github.com/Adorism/flaskexperiment
+    repo: https://github.com/Adorism/flaskrtutorial
     buildCommand: poetry install
     startCommand: poetry run flask run
     initialDeployHook: poetry run flask init-db
