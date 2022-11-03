@@ -4,7 +4,7 @@ services:
     autoDeploy: true # optional
     env: python
     repo: https://github.com/Adorism/flaskrtutorial
-    buildCommand: poetry install
+    buildCommand: pip install upgrade pip && poetry install
     startCommand: poetry run flask run
     initialDeployHook: poetry run flask init-db
     envVars:
