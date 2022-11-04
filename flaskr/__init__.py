@@ -4,7 +4,7 @@ import click
 from flask import Flask
 from flask.cli import with_appcontext
 from flask_sqlalchemy import SQLAlchemy
-from whitenoise import WhiteNoise
+
 
 __version__ = (1, 0, 0, "dev")
 
@@ -65,6 +65,3 @@ def init_db_command():
     init_db()
     click.echo("Initialized the database.")
 
-if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=8080)
