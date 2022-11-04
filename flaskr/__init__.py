@@ -4,6 +4,7 @@ import click
 from flask import Flask
 from flask.cli import with_appcontext
 from flask_sqlalchemy import SQLAlchemy
+from whitenoise import WhiteNoise
 
 __version__ = (1, 0, 0, "dev")
 
@@ -47,6 +48,8 @@ def create_app(test_config=None):
     # make "index" point at "/", which is handled by "blog.index"
     app.add_url_rule("/", endpoint="index")
 
+    app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/", prefix="assets/")
+
     return app
 
 
@@ -61,3 +64,7 @@ def init_db_command():
     """Clear existing data and create new tables."""
     init_db()
     click.echo("Initialized the database.")
+
+if __name__ == "__main__":
+    from waitress import serve
+    serve(app, host="0.0.0.0", port=8080)
