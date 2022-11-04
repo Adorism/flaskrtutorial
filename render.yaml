@@ -5,7 +5,7 @@ services:
     env: python
     repo: https://github.com/Adorism/flaskrtutorial
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn --bind 127.0.0.1:5000 appserver:gunicorn_app"
     initialDeployHook: poetry run flask init-db
     envVars:
       - key: FLASK_APP
