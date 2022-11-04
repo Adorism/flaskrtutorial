@@ -219,7 +219,7 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "58122c31359d8ec0f94967e9e70ad2c743cb9b66c33e4aead3e9aef81235fdd3"
+content-hash = "1910e6563f62a72566268f949724af67c514aac71b64351c383c32fe8263cd60"
 
 [metadata.files]
 brotli = [
