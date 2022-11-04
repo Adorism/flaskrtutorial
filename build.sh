@@ -9,6 +9,3 @@ source /opt/render/project/src/.venv/bin/activate
 
 pip install .
 poetry install 
-
-python manage.py collectstatic --no-input
-python manage.py migrate
