@@ -7,6 +7,6 @@ set -o errexit
 pip install virtualenv
 virtualenv .
 source /opt/render/project/src/.venv/bin/activate
-pip install --upgrade pippip install --force-reinstall -U setuptools
+pip install --upgrade pip pip install --force-reinstall -U setuptools
 pip install .
 poetry install 
