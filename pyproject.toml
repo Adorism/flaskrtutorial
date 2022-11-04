@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "flasktut"
+name = "flaskr"
 version = "0.1.0"
 description = "An example repo for guidance on deploying Flask apps to Render"
 authors = ["Audrey Maldonado"]
