@@ -48,8 +48,6 @@ def create_app(test_config=None):
     # make "index" point at "/", which is handled by "blog.index"
     app.add_url_rule("/", endpoint="index")
 
-    app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/", prefix="assets/")
-
     return app
 
 
