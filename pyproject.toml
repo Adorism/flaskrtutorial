@@ -6,9 +6,6 @@ authors = ["Audrey Maldonado"]
 license = "MIT"
 readme = "README.md"
 
-[tool.poetry.scripts]
-my-script = "flask run"
-
 [tool.poetry.dependencies]
 python = "^3.9"
 Flask = "^2.2.2"
