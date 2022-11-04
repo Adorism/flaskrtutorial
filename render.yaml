@@ -4,7 +4,7 @@ services:
     autoDeploy: true # optional
     env: python
     repo: https://github.com/Adorism/flaskrtutorial
-    buildCommand: /opt/render/project/src/.venv/bin/python -m pip install --upgrade pip && poetry install
+    buildCommand: "./build.sh"
     startCommand: "gunicorn flaskr.wsgi:application"
     initialDeployHook: poetry run flask init-db
     envVars:
