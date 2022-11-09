@@ -8,19 +8,15 @@ from flask_sqlalchemy import SQLAlchemy
 
 __version__ = (1, 0, 0, "dev")
 
-db = SQLAlchemy(app)
+db = SQLAlchemy()
 
 
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
 
-    # some deploy systems set the database url in the environ
-    db_url = os.environ.get("DATABASE_URL")
-
-    if db_url is None:
-        # default to a sqlite database in the instance folder
-        db_url = "sqlite:///flaskr.sqlite"
+   
+    db_url = "sqlite:/opt/render/project/src/instance/flaskr.sqlite"
 
     app.config.from_mapping(
         # default secret that should be overridden in environ or config
