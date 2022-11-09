@@ -16,7 +16,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
    
-    db_url = "sqlite:/opt/render/project/src/instance/flaskr.sqlite"
+    db_url = "sqlite:///flaskr.sqlite"
 
     app.config.from_mapping(
         # default secret that should be overridden in environ or config
