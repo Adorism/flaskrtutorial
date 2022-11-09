@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 __version__ = (1, 0, 0, "dev")
 
-db = SQLAlchemy()
+db = SQLAlchemy(app)
 
 
 def create_app(test_config=None):
