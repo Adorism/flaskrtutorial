@@ -6,6 +6,7 @@ from flask.cli import with_appcontext
 from flask_sqlalchemy import SQLAlchemy
 
 
+
 __version__ = (1, 0, 0, "dev")
 
 db = SQLAlchemy()
@@ -16,7 +17,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
    
-    db_url = "sqlite:///flaskr.sqlite"
+    db_url = "sqlite://flaskr.sqlite"
 
     app.config.from_mapping(
         # default secret that should be overridden in environ or config

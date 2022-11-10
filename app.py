@@ -1,3 +1,2 @@
-from flaskr.__init__ import create_app
+import flaskr.__init__ 
 
-gunicorn_app = create_app()
