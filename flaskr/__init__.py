@@ -4,6 +4,7 @@ import click
 from flask import Flask
 from flask.cli import with_appcontext
 from flask_sqlalchemy import SQLAlchemy
+from whitenoise import WhiteNoise
 
 
 
@@ -41,6 +42,9 @@ def create_app(test_config=None):
 
     app.register_blueprint(auth.bp)
     app.register_blueprint(blog.bp)
+
+    #add whitenoise
+    app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
 
     # make "index" point at "/", which is handled by "blog.index"
     app.add_url_rule("/", endpoint="index")
