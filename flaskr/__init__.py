@@ -17,8 +17,7 @@ def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
 
-   
-    db_url = "sqlite://flaskr.sqlite"
+    db_url = os.path.join(app.instance_path, 'instance', 'flaskr.sqlite')
 
     app.config.from_mapping(
         # default secret that should be overridden in environ or config
