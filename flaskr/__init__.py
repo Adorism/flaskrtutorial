@@ -12,6 +12,7 @@ __version__ = (1, 0, 0, "dev")
 db = SQLAlchemy()
 
 
+
 def create_app(test_config=None):
     """Create and configure an instance of the Flask application."""
     app = Flask(__name__, instance_relative_config=True)
@@ -48,10 +49,12 @@ def create_app(test_config=None):
     return app
 
 
+
 def init_db():
     db.drop_all()
     db.create_all()
 
+gunicorn_app = create_app()
 
 @click.command("init-db")
 @with_appcontext
