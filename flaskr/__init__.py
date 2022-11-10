@@ -5,6 +5,7 @@ from flask import Flask
 from flask.cli import with_appcontext
 from flask_sqlalchemy import SQLAlchemy
 from whitenoise import WhiteNoise
+from werkzeug.middleware.proxy_fix import ProxyFix
 
 
 
@@ -45,6 +46,7 @@ def create_app(test_config=None):
 
     #add whitenoise
     app.wsgi_app = WhiteNoise(app.wsgi_app, root="static/")
+    app.wsgi_app = ProxyFix(app.wsgi_app)
 
     # make "index" point at "/", which is handled by "blog.index"
     app.add_url_rule("/", endpoint="index")
